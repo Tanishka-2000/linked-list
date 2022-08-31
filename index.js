@@ -99,6 +99,14 @@ class LinkedList {
         node.next = newNode;
     }
 
+    removeAt(index){
+        if(index === 0) this.head = this.head.next;
+        else {
+            let node = this.at(index - 1);
+            node.next = node.next.next;
+        }
+    }
+
     toString(){
         let node = this.head;
         let str = '';
@@ -126,6 +134,9 @@ let ll = new LinkedList([4,6,2,75,39]);
 // console.log(ll.contains(55));
 // console.log(ll.find(75));
 // console.log(ll.find(67));
+// console.log(ll.toString());
+// console.log(ll.insertAt(67,3));
+// console.log(ll.toString());
 console.log(ll.toString());
-console.log(ll.insertAt(67,3));
+console.log(ll.removeAt(3));
 console.log(ll.toString());
