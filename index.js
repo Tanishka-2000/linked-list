@@ -39,13 +39,24 @@ class LinkedList {
             str += `(${node.value}) => `;
             node = node.next;
         }
-        return str+'null';
+        return str + 'null';
     }
+
+    Head(){
+        return this.head;
+    }
+
+    Tail(){
+        return this.tail;
+    }
+
 }
 
 let ll = new LinkedList([4,6,2,75,39]);
-console.log(ll.toString());
-ll.append(45);
-console.log(ll.toString());
-ll.prepend(12);
-console.log(ll.toString());
+// console.log(ll.toString());
+// ll.append(45);
+// console.log(ll.toString());
+// ll.prepend(12);
+// console.log(ll.toString());
+console.log(ll.Head());
+console.log(ll.Tail());
