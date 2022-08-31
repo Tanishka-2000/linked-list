@@ -58,6 +58,20 @@ class LinkedList {
         }
         return node;
     }
+
+    pop(){
+        if(this.head === null) return; //if list is empty
+        if(this.head === this.tail) head = tail = null; //if list has only one element
+        else {
+            let node = this.head;
+            while(node.next.next !== null){
+                node = node.next;
+            }
+            this.tail = node;
+            node.next = null;
+        }
+    }
+
     toString(){
         let node = this.head;
         let str = '';
@@ -79,5 +93,7 @@ let ll = new LinkedList([4,6,2,75,39]);
 // console.log(ll.toString());
 // console.log(ll.Head());
 // console.log(ll.Tail());
-console.log('size: ' + ll.size());
-console.log(ll.at(8));
+// console.log('size: ' + ll.size());
+// console.log(ll.at(8));
+console.log(ll.pop());
+console.log(ll.toString());
