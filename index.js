@@ -50,6 +50,14 @@ class LinkedList {
         return this.tail;
     }
 
+    at(index){
+        let node = this.head;
+        for(let i = 0; i <= index - 1; i++){
+            node = node.next;
+        }
+        return node;
+    }
+
 }
 
 let ll = new LinkedList([4,6,2,75,39]);
@@ -58,5 +66,6 @@ let ll = new LinkedList([4,6,2,75,39]);
 // console.log(ll.toString());
 // ll.prepend(12);
 // console.log(ll.toString());
-console.log(ll.Head());
-console.log(ll.Tail());
+// console.log(ll.Head());
+// console.log(ll.Tail());
+console.log(ll.at(2));
