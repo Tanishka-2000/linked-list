@@ -72,6 +72,15 @@ class LinkedList {
         }
     }
 
+    contains(value){
+        let node = this.head;
+        while(node !== null){
+            if(node.value === value) return true;
+            node = node.next;
+        }
+        return false;
+    }
+
     toString(){
         let node = this.head;
         let str = '';
@@ -81,8 +90,6 @@ class LinkedList {
         }
         return str + 'null';
     }
-
-
 }
 
 let ll = new LinkedList([4,6,2,75,39]);
@@ -95,5 +102,7 @@ let ll = new LinkedList([4,6,2,75,39]);
 // console.log(ll.Tail());
 // console.log('size: ' + ll.size());
 // console.log(ll.at(8));
-console.log(ll.pop());
-console.log(ll.toString());
+// console.log(ll.pop());
+// console.log(ll.toString());
+console.log(ll.contains(75));
+console.log(ll.contains(55));
